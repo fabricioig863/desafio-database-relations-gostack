@@ -43,7 +43,6 @@ class CreateOrderService {
       throw new AppError('Could not find my products with the given ids');
     }
 
-    console.log('1');
     const existentProductsIds = existentProducts.map(product => product.id);
 
     const checkInexistentProducts = products.filter(
@@ -90,7 +89,6 @@ class CreateOrderService {
 
     await this.productsRepository.updateQuantity(orderedProductsQuantity);
 
-    console.log(order);
     return order;
   }
 }
